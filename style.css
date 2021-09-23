@@ -1,0 +1,196 @@
+body {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #151518;
+  perspective: 2000px;
+}
+
+.game-container {
+  margin-top: 15%;
+  position: relative;
+  width: 450px;
+  height: 200px;
+  margin-right: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 5px solid #e0f0ff;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.character {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 44px;
+  height: 33px;
+  background-image: url(images/slime.svg);
+  background-size: cover;
+  z-index: 2;
+}
+
+.character-lost {
+  background-image: url(images/slime-lost.svg);
+  transition: transform 0.15s;
+  transform: translateX(-100px);
+}
+
+.character-jump {
+  animation: 0.7s gameJump;
+}
+
+.block {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0px;
+  left: 100%;
+  background: #e0f0ff;
+}
+
+.block-move {
+  animation: 1s linear blockMove;
+}
+
+.counter {
+  font-family: sans-serif;
+  color: #fff;
+  text-align: right;
+}
+
+.game-over {
+  position: absolute;
+  box-sizing: border-box;
+  top: calc(50% - 50px);
+  width: 100%;
+  text-align: center;
+  color: #e0f0ff;
+  font-family: sans-serif;
+  font-size: 30px;
+  transition: 0.7s;
+}
+
+.game-over-hide {
+  opacity: 0;
+}
+
+.play-btn, .auto-play-btn {
+  position: absolute;
+  width: 80px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 99px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 11px;
+  background: #e0f0ff;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+  opacity: 0.7;
+}
+
+.play-btn:hover, .auto-play-btn:hover {
+  opacity: 1;
+}
+
+.play-btn-active, .auto-play-btn-active {
+  transform: scale(0.9);
+}
+
+.play-btn-hide, .auto-play-btn-hide {
+  display: none;
+}
+
+.play-btn {
+  bottom: -105px;
+  left: 0;
+}
+
+.auto-play-btn {
+  bottom: -105px;
+  right: 0px;
+  background: #e0f0ff;
+  outline: none;
+}
+
+.jump-btn {
+  position: absolute;
+  bottom: -130px;
+  width: 115px;
+  height: 100px;
+  margin-top: 10px;
+  border: none;
+  background: #1FFFD9;
+  font-size: 23.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  transform-style: preserve-3d;
+  transform: rotateX(45deg);
+  transition: box-shadow 0.3s, transform 0.4s;
+  box-shadow: 0px 1px 0px 0px #139983,
+              0px 2px 0px 0px #139983,
+              0px 3px 0px 0px #139983,
+              0px 4px 0px 0px #139983,
+              0px 5px 0px 0px #139983,
+              0px 6px 0px 0px #139983,
+              0px 7px 0px 0px #139983,
+              0px 8px 0px 0px #139983,
+              0px 9px 0px 0px #139983,
+              0px 10px 0px 0px #139983,
+              0px 11px 0px 0px #139983,
+              0px 12px 0px 0px #139983,
+              0px 13px 0px 0px #139983,
+              0px 14px 0px 0px #139983,
+              0px 15px 0px 0px #139983;
+  cursor: pointer;
+  outline-color: #1FFFD9;
+  outline-width: 2px;
+}
+
+.jump-btn-active {
+  transition: box-shadow 0.4s, transform 0.3s;
+  box-shadow: 0px 1px 0px 0px #1ad3b4,
+              0px 2px 0px 0px #1ad3b4,
+              0px 3px 0px 0px #1ad3b4,
+              0px 4px 0px 0px #1ad3b4,
+              0px 5px 0px 0px #1ad3b4;
+  transform: rotateX(45deg) translateY(11px);
+}
+
+@keyframes blockMove {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -105px;
+  }
+}
+@keyframes gameJump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 150px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
