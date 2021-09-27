@@ -24,6 +24,7 @@ const gameOver = document.querySelector('.game-over');
 const playBtn = document.querySelector('.play-btn');
 const autoPlayBtn = document.querySelector('.auto-play-btn');
 const jumpBtn = document.querySelector('.jump-btn');
+const endScores = document.querySelector('.end-scores');
 
 gameArea.addEventListener('click', () => {
     if (autoPlay === false) {
@@ -186,6 +187,7 @@ function playGame() {
 
                     gameOver.classList.remove('game-over-hide');
 
+                    endScores.textContent = `${c - 1}`;
                     c = 0;
                 }
                 play = false;

@@ -8,7 +8,6 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #151518;
   perspective: 2000px;
 }
 
@@ -21,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 5px solid #e0f0ff;
+  border-bottom: 5px solid #222;
 }
 
 .game-area {
@@ -57,7 +56,7 @@ body {
   position: absolute;
   bottom: 0px;
   left: 100%;
-  background: #e0f0ff;
+  background: #222;
 }
 
 .block-move {
@@ -66,17 +65,16 @@ body {
 
 .counter {
   font-family: sans-serif;
-  color: #fff;
   text-align: right;
 }
 
 .game-over {
   position: absolute;
   box-sizing: border-box;
-  top: calc(50% - 50px);
+  top: calc(50% - 70px);
   width: 100%;
   text-align: center;
-  color: #e0f0ff;
+  color: #222;
   font-family: sans-serif;
   font-size: 30px;
   transition: 0.7s;
@@ -98,12 +96,12 @@ body {
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 11px;
-  background: #e0f0ff;
-  color: #000;
+  background: #000;
+  color: #fff;
   cursor: pointer;
   transition: 0.3s;
   outline: none;
-  opacity: 0.7;
+
 }
 
 .play-btn:hover, .auto-play-btn:hover {
@@ -126,7 +124,7 @@ body {
 .auto-play-btn {
   bottom: -105px;
   right: 0px;
-  background: #e0f0ff;
+
   outline: none;
 }
 
