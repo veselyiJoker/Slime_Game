@@ -61,7 +61,6 @@ playBtn.addEventListener('click', () => {
 
     }
 
-
 });
 
 autoPlayBtn.addEventListener('click', () => {
